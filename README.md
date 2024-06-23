@@ -15,11 +15,7 @@
 
 
 <!-- PROJECT LOGO -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-<br />
+
 <div align="center">
   <a href="https://github.com/universityofsussex-its/RC-Workshops">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
@@ -40,6 +36,16 @@
     <a href="https://github.com/universityofsussex-its/RC-Workshops/issues">Request Feature</a>
   </p>
 </div>
+
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+
+
+
+
 
 
 <!-- TABLE OF CONTENTS -->
