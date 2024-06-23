@@ -18,7 +18,7 @@
 
 <div align="center">
   <a href="https://github.com/universityofsussex-its/RC-Workshops">
-    <img src="../../images/logo.png" alt="Logo" width="80" height="80">
+    <img src="../../../images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Basic Exercises #1</h3>
@@ -94,10 +94,10 @@ For connecting to the HPC - this workshop will only provide one example using Mo
 Launch MobaXterm from the Search Window or from your Desktop (we suggest to pin to taskbar if you will use the HPC often)
 
 You should get a window open like this:
-<img src="../../images/exercise1/a2-mob1.png">
+<img src="../../../images/exercise1/a2-mob1.png">
 
 Click <strong>Session</strong> in the top left corner. You should have a window pop up that looks like this:
-<img src="../../images/exercise1/a2-mob2.png">
+<img src="../../../images/exercise1/a2-mob2.png">
 
 
 Click <strong>SSH</strong> in the top left again and enter the following:
@@ -108,7 +108,7 @@ Username: `anon123`
 Where the username is your sussex, shortform username for email/canvas etc.
 
 It should look like this:
-<img src="../../images/exercise1/a2-mob3.png">
+<img src="../../../images/exercise1/a2-mob3.png">
 
 Click <strong>OK</strong> and you will open a terminal in the main MobaXterm window, which will prompt for your Sussex password. Type this in, noting that you will not see the cursor move/show your password. (Fun tidbit - this was orignally a bug in linux but was thought useful and kept).
 
@@ -117,7 +117,7 @@ Click <strong>OK</strong> and you will open a terminal in the main MobaXterm win
 
 You should now be seeing the Login Splash for the Apollo2 HPC. Depending on your terminal theme it should look somthing like this:
 
-<img src="../../images/exercise1/a2-splash.png">
+<img src="../../../images/exercise1/a2-splash.png">
 
 <strong>IF</strong> you cannot connect to `janus.hpc.sussex.ac.uk` you can try our second, older login node `apollo2.hpc.sussex.ac.uk`.
 

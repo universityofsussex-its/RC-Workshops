@@ -108,7 +108,13 @@ The Basic Exercies are for first time users of a HPC system. It is advised that 
 
 The Exercies are expected to take around 2h to complete, based on a 2-4h workshop. If you are currently attending a workshop, it should have already been mentioned that you are not expected to complete each exercise during the allotted time in the workshop. We expect you to complete these exercises after the workshop and contact the Research Team for additional help if needed via the slack channel. (See workshop invite for details).
 
-
+<ol>
+<li><a href="presentations/Introduction to HPC.pdf">Intro to HPC Slides</a></li>
+<li><a href="exercises/basic/Exercise1/">Exercise 1</a></li>
+<li><a href="exercises/basic/Exercise2/">Exercise 2</a></li>
+<li><a href="exercises/basic/Exercise3/">Exercise 3</a></li>
+<li><a href="exercises/basic/Exercise4/">Exercise 4</a></li>
+</ol>
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
