@@ -1,0 +1,22 @@
+#!/bin/bash
+#$ -N Workshop_Basic
+#$ -q smp.q
+#$ -pe openmp 1
+#$ -l m_mem_free=2G
+#$ -l h_vmem=2G
+#$ -cwd
+#$ -j y
+#$ -o output
+#$ -S /bin/bash
+#$ -jc test.short
+#$ -t start-stop:step
+#$ -tc 25
+
+echo $JOB_ID
+echo $SGE_TASK_ID
+echo $SGE_TASK_FIRST
+echo $SGE_TASK_LAST
+echo $SGE_TASK_STEPSIZE
+echo $SGE_O_WORKDIR
+echo $SGE_O_HOST
+echo $SGE_O_WORKDIR

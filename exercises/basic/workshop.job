@@ -1,0 +1,16 @@
+#!/bin/bash
+#$ -N Workshop_Basic
+#$ -q smp.q
+#$ -pe openmp 1
+#$ -l m_mem_free=2G
+#$ -l h_vmem=2G
+#$ -cwd
+#$ -j y
+#$ -o output
+#$ -S /bin/bash
+#$ -jc test.short
+
+echo $JOB_ID
+echo $SGE_O_WORKDIR
+echo $SGE_O_HOST
+echo $SGE_O_WORKDIR

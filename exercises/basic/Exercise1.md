@@ -35,8 +35,8 @@
     <li><a href="#login">Login</a></li>
     <li><a href="#basic-bash">Basic Bash</a></li>
     <li><a href="#storage">Storage</a></li>
-    <li><a href="#storage">Bash Scripts</a></li>
-    <li><a href="#storage">Summary</a></li>
+    <li><a href="#bash-scripts">Bash Scripts</a></li>
+    <li><a href="#summary">Summary</a></li>
   </ol>
 </details>
 
@@ -59,13 +59,13 @@
 Click <b>Launchpad</b> >> <b>Terminal</b>
 Ths should bring up a black bash shell terminal. This will allow you to run the ssh login commad to janus:
 
-```
+```bash
   ssh -XY <username>@janus.hpc.sussex.ac.uk
 ```
 
 Where <it>username</it> is your sussex, shortform username for email/canvas etc. Eg.
 
-```
+```bash
   ssh -XY anon123@janus.hpc.sussex.ac.uk
 ```
 
@@ -77,13 +77,13 @@ Ths should bring up a purple,red or black bash shell terminal based on your flav
 
 This will allow you to run the ssh login commad to janus:
 
-```
+```bash
   ssh -XY <username>@janus.hpc.sussex.ac.uk
 ```
 
 Where <it>username</it> is your sussex, shortform username for email/canvas etc. Eg.
 
-```
+```bash
   ssh -XY anon123@janus.hpc.sussex.ac.uk
 ```
 
@@ -123,6 +123,7 @@ You should now be seeing the Login Splash for the Apollo2 HPC. Depending on your
 
 If you get banned from Janus due to weird activity trying to login (or password failure too many times) - contact an admin with your ip address to be unbanned. Visit <a href="www.sussex.ac.uk/its/ip">here</a> if you need to find your IP. (Preferred route as this says what Sussex sees your IP as).
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Basic Bash
 
@@ -135,7 +136,7 @@ If you get banned from Janus due to weird activity trying to login (or password 
 
   This first question requires you to use the `man` command on the `ls` or list function for a directory.
 
-  ```
+  ```bash
     man ls
   ```
 
@@ -218,6 +219,119 @@ If you get banned from Janus due to weird activity trying to login (or password 
 
   View the manual for `rmdir`, and after changing directory back to your home directory, or ascending up one level, delete ``example1`` dir.
 </ol>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Storage
+
+<p>
+Everyone has at least two directories beside their home for storing data. This is on the lustre filesystem and you have two types.
+</p>
+<ul>
+<li>Scratch: Temporary unlimited storage - can be deleted by admins after 30 days if they need to.</li>
+<li>User: Non-backed Up - 2TB Limit - Should be your main storage area.</li>
+</ul>
+
+<ol>
+  <li><h3> Navigate to Scratch </h3></li>
+
+Confirm you have a temporary scratch directory located at `/mnt/lustre/scratch/<dep>/<username>/`
+    
+  <li><h3> Navigate to Users </h3></li>
+
+Confirm you have a users directory located at `/mnt/lustre/users/<dep>/<username>/`
+
+  <li><h3> Check Quota </h3></li>  
+
+You can take a look at the man entry for `lfs` which is the lustre filesystem command. However the only command we will look at today is the `getquota` to view your current usage. 
+```bash
+  lfs getquota -hu <username> /mnt/lustre/users/<dep>/<username>/
+```
+
+Test this now on your lustre users directory to see the number of files and human readable disc usage.
+</ol>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Bash Scripts
+
+In this section of the exercise we will be working through creating bash scripts. These will be invaluable for performing simple operations on the HPC, which you want to either save for posterity incase you need to reproduce your efforts. Or for ease of convienience while writing out the logic. 
+
+Bash scripts are the default format for writing jobs submissions to the HPC scheduler. (Other options are avaiable but we will only handle bash in this workshop).
+
+<strong>All these scripts should exist in your lustre user directory, as this is where we will be working from now on </strong>
+
+<ol>
+<li><h3> Simple Print </h3></li>
+
+Create a file using `vim` called ``simple_print.sh`, where the first line should be `#!/bin/bash`. This sets the file to be a bash script. 
+
+Please write a series of `echo` commands which will print the following on new lines:
+
+```bash
+Howdy
+This is an example
+of a simple
+print script in bash
+```
+
+<li><h3> Run Simple Print </h3></li>
+
+Attempt to run the ``simple_print.sh` script using `./simple_print.sh`. What do you get?
+
+In order to be able to run the script, we need to modify its permissions. First using the list function from previouys, with the full arguments asked for, check the permissions on the script.
+
+Run the following command:
+
+```bash
+chmod +x simple_print.sh
+```
+
+And see what has changed.
+
+Try running the script again.
+
+<li><h3> File Operations </h3></li>
+
+In this exercise we are going to read some variables from a file and print them to screen using bash variables. This is useful when wanting to later submit array jobs with specific input args. (Or for checking if results are what you expected).
+
+Create a file called ``penguin_names.txt`` and enter the following:
+
+```bash
+Skipper
+Rico
+Kowalski
+Private
+```
+
+And we are going to be using a loop and the previous `cat` command to read the file and the pipe `|` operator to pass outputs between commands.
+
+Create a file called ``loop_de_loop.sh`` - remembering to include the first bash line `#!/bin/bash` with the following:
+
+```bash
+cat penguin_names.txt | while read line
+do
+  echo $line
+done
+```
+
+If you run this file, it should print each name from ``penguin_names.txt``. You can also parse arguments to a bash file using the number variables `$1`, `$2`..etc.
+
+Modify ``loop_de_loop.sh`` to read a file provided by an argument parsed on the command line.
+
+eg. your execution of the file will look like:
+```bash
+  ./loop_de_loop.sh penguin_names.txt
+```
+</ol>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Summary
+
+This exercise is now complete but you have one more task to do. Using all your knowledge gained so far - you will need to use `man` to examine the copy command `cp` and look at recurssive flags. Once you have done this - you need to copy the directory `/mnt/lustre/its/Workshops/RC-Workshops/` to your lustre user directory.
+
+
 
 
 
