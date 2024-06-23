@@ -25,7 +25,6 @@
 
   <p align="center">
     Repository for Training and Workshop Materials for new and Existing users of the University of Sussex's High Performace Computing Cluster
-    [![Contributors][contributors-shield]][contributors-url]
     <br />
     <a href="https://github.com/universityofsussex-its/RC-Workshops"><strong>Explore the docs »</strong></a>
     <br />
@@ -37,7 +36,7 @@
     <a href="https://github.com/universityofsussex-its/RC-Workshops/issues">Request Feature</a>
   </p>
 </div>
-
+[![Contributors][contributors-shield]][contributors-url]
 
 
 <!-- TABLE OF CONTENTS -->
