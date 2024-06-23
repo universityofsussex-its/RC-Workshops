@@ -88,8 +88,6 @@ Below you will find links through to each of the workshops offered by the Resear
 <!-- GETTING STARTED -->
 ## Getting Started
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ### Prerequisites
 
 In order to complete the workshops you will need to have the following setup/installed. It is also advised you have some general unix commandline knowledge with bash. If you do not already have a HPC account, please contact via mail the <a href="mailto:itservicedesk@sussex.ac.uk">ITS Service Desk</a> or visit their <a href="https://www.sussex.ac.uk/its/help/">website</a> and click the red <b>IT Support Button</b>
