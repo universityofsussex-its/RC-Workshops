@@ -79,25 +79,273 @@
 
 ## File Operations
 
-Some example of pushing
+<ol>
+<li> Simple file read </li>
 
+```bash
+#!/bin/bash
+#$ -N Workshop_io
+#$ -q smp.q
+#$ -pe openmp 1
+#$ -l m_mem_free=2G
+#$ -l h_vmem=2G
+#$ -cwd
+#$ -j y
+#$ -o output/workshop_io1
+#$ -S /bin/bash
+#$ -jc test.short
 
+cat /its/home/<username>/penguin_names.txt | while read line
+do
+  echo $line
+done
+```
+
+<li> Dynamic File Read </li>
+
+```bash
+#!/bin/bash
+#$ -N Workshop_io2
+#$ -q smp.q
+#$ -pe openmp 1
+#$ -l m_mem_free=2G
+#$ -l h_vmem=2G
+#$ -cwd
+#$ -j y
+#$ -o output/workshop_io2
+#$ -S /bin/bash
+#$ -jc test.short
+
+cat $1 | while read line
+do
+  echo $line
+done
+```
+
+```bash
+qsub workshop_io.job /its/home/<username>/penguin_names.txt
+```
+
+<li> Creating and Destroying </li>
+
+```bash
+#!/bin/bash
+#$ -N Workshop_cyberman
+#$ -q smp.q
+#$ -pe openmp 1
+#$ -l m_mem_free=2G
+#$ -l h_vmem=2G
+#$ -cwd
+#$ -j y
+#$ -o output/workshop_cyberman
+#$ -S /bin/bash
+#$ -jc test.short
+
+mkdir -p /mnt/lustre/users/<dep>/<user>/example1
+mkdir -p /mnt/lustre/users/<dep>/<user>/example1/folder1
+mkdir -p /mnt/lustre/users/<dep>/<user>/example1/folder2
+mkdir -p /mnt/lustre/users/<dep>/<user>/example1/folder3
+touch /mnt/lustre/users/<dep>/<user>/example1/folder2/afile1
+touch /mnt/lustre/users/<dep>/<user>/example1/folder2/afile2
+touch /mnt/lustre/users/<dep>/<user>/example1/folder3/afile1
+
+```
+
+```bash
+#!/bin/bash
+#$ -N Workshop_cyberman
+#$ -q smp.q
+#$ -pe openmp 1
+#$ -l m_mem_free=2G
+#$ -l h_vmem=2G
+#$ -cwd
+#$ -j y
+#$ -o output/workshop_cyberman
+#$ -S /bin/bash
+#$ -jc test.short
+
+mkdir -p /mnt/lustre/users/<dep>/<user>/example2
+echo "made top level dir"
+mkdir -p /mnt/lustre/users/<dep>/<user>/example2/folder1
+mkdir -p /mnt/lustre/users/<dep>/<user>/example2/folder2
+mkdir -p /mnt/lustre/users/<dep>/<user>/example2/folder3
+echo "made sub folders"
+touch /mnt/lustre/users/<dep>/<user>/example2/folder2/afile1
+touch /mnt/lustre/users/<dep>/<user>/example2/folder2/afile2
+touch /mnt/lustre/users/<dep>/<user>/example2/folder3/afile1
+echo "made files"
+sleep 60
+
+echo "deleting files"
+rm -y /mnt/lustre/users/<dep>/<user>/example2/folder2/afile1
+rm -y /mnt/lustre/users/<dep>/<user>/example2/folder2/afile2
+rm -y /mnt/lustre/users/<dep>/<user>/example2/folder3/afile1
+
+echo "removing sub dirs"
+rmdir /mnt/lustre/users/<dep>/<user>/example2/folder1
+rmdir /mnt/lustre/users/<dep>/<user>/example2/folder2
+rmdir /mnt/lustre/users/<dep>/<user>/example2/folder3
+
+echo "removing top level"
+rmdir /mnt/lustre/users/<dep>/<user>/example2
+```
+
+</ol>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Using SGE Variables
 
+<ol>
+<li> Simple User of SGE Variables </li>
+
+```bash
+#!/bin/bash
+#$ -N Workshop_variables
+#$ -q smp.q
+#$ -pe openmp 1
+#$ -l m_mem_free=2G
+#$ -l h_vmem=2G
+#$ -cwd
+#$ -j y
+#$ -o output/workshop_variables
+#$ -S /bin/bash
+#$ -jc test.short
+
+cd $HOME
+pwd
+cd $SGE_O_WORKDIR
+
+```
+
+<li> Simple Host check </li>
+
+```bash
+#!/bin/bash
+#$ -N Workshop_variables
+#$ -q smp.q
+#$ -pe openmp 1
+#$ -l m_mem_free=2G
+#$ -l h_vmem=2G
+#$ -cwd
+#$ -j y
+#$ -o output/workshop_variables
+#$ -S /bin/bash
+#$ -jc test.short
+
+cd $HOME
+pwd
+cd $SGE_O_WORKDIR
+echo $SGE_O_HOST # or run the hostname command.
+```
+
+<li> Simple Core count chehck </li>
+
+```bash
+#!/bin/bash
+#$ -N Workshop_variables
+#$ -q smp.q
+#$ -pe openmp 4
+#$ -l m_mem_free=500M
+#$ -l h_vmem=500M
+#$ -cwd
+#$ -j y
+#$ -o output/workshop_variables
+#$ -S /bin/bash
+#$ -jc test.short
+
+cd $HOME
+pwd
+cd $SGE_O_WORKDIR
+echo $SGE_O_HOST # or run the hostname command.
+echo $NSLOTS
+```
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Job Classes
+
+<ol>
+<li> Un-queueable job </li>
+
+```bash
+#!/bin/bash
+#$ -N Workshop_jobclasses
+#$ -q smp.q
+#$ -pe openmp 2000
+#$ -l m_mem_free=64G
+#$ -l h_vmem=64G
+#$ -cwd
+#$ -j y
+#$ -o output/workshop_jobclasses
+#$ -S /bin/bash
+#$ -jc verylong.default
+
+cd $HOME
+pwd
+cd $SGE_O_WORKDIR
+echo $SGE_O_HOST # or run the hostname command.
+echo $NSLOTS
+```
+
+
+</ol>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Timed Jobs
 
+<ol>
+<li> Start Job After Timestamp </li>
+
+```bash
+qsub -a 202406231245 workshop.job # Note timestamp is just an example
+```
+
+<li> Start Job after Another Job completes </li>
+
+```bash
+#!/bin/bash
+#$ -N Workshop_slow
+#$ -q smp.q
+#$ -pe openmp 2000
+#$ -l m_mem_free=64G
+#$ -l h_vmem=64G
+#$ -cwd
+#$ -j y
+#$ -o output/workshop_slow
+#$ -S /bin/bash
+#$ -jc test.short
+
+sleep 30
+```
+
+```bash
+#!/bin/bash
+#$ -N Workshop_waiting
+#$ -q smp.q
+#$ -pe openmp 2000
+#$ -l m_mem_free=64G
+#$ -l h_vmem=64G
+#$ -cwd
+#$ -j y
+#$ -o output/workshop_slow
+#$ -S /bin/bash
+#$ -jc test.short
+
+date +"%T"
+```
+
+
+
+</ol>
+
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Extension Exercises
+
+No Solutions Provided :P
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

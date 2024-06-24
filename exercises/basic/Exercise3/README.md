@@ -72,10 +72,6 @@ You will have to exit any interactive session. To check the server you are curre
 #$ -jc test.short
 
 echo $JOB_ID
-echo $SGE_TASK_ID
-echo $SGE_TASK_FIRST
-echo $SGE_TASK_LAST
-echo $SGE_TASK_STEPSIZE
 echo $SGE_O_WORKDIR
 echo $SGE_O_HOST
 echo $SGE_O_WORKDIR
@@ -230,6 +226,7 @@ There are two types of jobclasses:
 
 As such - if you have a long running job it is recommended you impliment checkpointing into your code. This will allow you to run with more cores competitively and simply resume where the previous run ended.
 
+<ol>
 <li> Un-queuable Job </li>
 
 Copy and create a new jobscript called ``workshop_jobclasses.job``.
@@ -264,6 +261,7 @@ The job should now sucessfully queue, and the terminal should state which config
 
 You cannot change runtime or jobclass via this method as they are controlled by the shedular submission wrapper.
 
+</ol>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -271,6 +269,7 @@ You cannot change runtime or jobclass via this method as they are controlled by 
 
 For ecological reasons you might want to submit a job to run overnight, or after a specfic time. And example might be a job which needs to run after another remote system has updated (eg. Downloading Data after a public release). Another option is to run at time when the UK energy grid is most green/expected to be most green. Or if your job is dependendent on another job having completed (technically errored, failed and killed will also count as completed on the Apollo2 Grid Engine)
 
+<ol>
 <li> Start Job After Timestamp</li>
 
 To do this you can set the `-a` flag, short for after. 
@@ -306,7 +305,7 @@ qsub -hold_jid ${jobids} workshop_waiting.job
 
 Check the status of the queue and the sequence of timestamps to confirm the order once all your jobs have completed.
 
-
+</ol>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Extension Exercises
@@ -315,6 +314,7 @@ These are extension exercises if you wish to spend more time learning the more a
 
 Each of these tasks are completeable with the skills you have developed over these three exercies so far. However you may need to investivate more with `--help` and `man`. 
 
+<ol>
 <li> Sequential Fibonacci Sequence </li>
 
 Create a jobscript which calculates the Fibonacci sequence by matching the following conditions.
@@ -334,7 +334,7 @@ For this you will need to submit a job which reserves a single gpu_card, runs th
 
 Create a jobscript which will automatically load at least 30, non-conflicting, same tool-chain modules for a user. It will then save that module set for the user. This jobscript should only run after midnight of the next day of the jobs submission to reduce carbon footprint.
 
-
+</ol>
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>

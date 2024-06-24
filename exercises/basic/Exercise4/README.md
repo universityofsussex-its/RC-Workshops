@@ -75,10 +75,12 @@ Copy and modify the ``workshop.job`` into an array job, which also prints the 4 
 
 ## Simple Itter Job
 
+<ol>
 <li> Array Job Concurrency </li>
 
 If you set concurrency to 1, you can generate a large array of jobs which will attempt to run consecutively. Modify you array jobscript to run 25 jobs consecutively.
 
+</ol>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Simple File Input Job

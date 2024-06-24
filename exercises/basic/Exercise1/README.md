@@ -154,7 +154,7 @@ If you get banned from Janus due to weird activity trying to login (or password 
 
 <li><h3> Create a Folder </h3></li>
 
-  I would like to to create a new folder in your home directory called ``example1``, using the `mkdir` command. Please use `man mkdir` to see how to do this.
+  Please create a new folder in your home directory called ``example1``, using the `mkdir` command. Please use `man mkdir` to see how to do this.
   
   Now re-list your home directory after that command has run to see the change when creating that folder.
 
@@ -164,7 +164,7 @@ If you get banned from Janus due to weird activity trying to login (or password 
 
 <li><h3> Create a File</h3></li>
 
-   We will now create an empty file, ready to be written to. This uses the `touch` command. Please create a file called ``afile.txt`` in your ``example1`` directory. (Again, use man to find out how to use the command)
+   We will now create an empty file, ready to be written to. This uses the `touch` command. Please create a file called ``afile.txt`` in your ``example1`` directory. (Again, use `man` to find out how to use the command)
 
 <li><h3> Write to a File</h3></li>
 
@@ -259,12 +259,12 @@ In this section of the exercise we will be working through creating bash scripts
 
 Bash scripts are the default format for writing jobs submissions to the HPC scheduler. (Other options are avaiable but we will only handle bash in this workshop).
 
-<strong>All these scripts should exist in your lustre user directory, as this is where we will be working from now on </strong>
+<strong>All these scripts should exist in your lustre user directory, as this is where we will be working from now on. </strong>
 
 <ol>
 <li><h3> Simple Print </h3></li>
 
-Create a file using `vim` called ``simple_print.sh`, where the first line should be `#!/bin/bash`. This sets the file to be a bash script. 
+Create a file using `vim` called ``simple_print.sh``, where the first line should be `#!/bin/bash`. This sets the file to be a bash script. 
 
 Please write a series of `echo` commands which will print the following on new lines:
 
@@ -277,7 +277,7 @@ print script in bash
 
 <li><h3> Run Simple Print </h3></li>
 
-Attempt to run the ``simple_print.sh` script using `./simple_print.sh`. What do you get?
+Attempt to run the ``simple_print.sh`` script using `./simple_print.sh`. What do you get?
 
 In order to be able to run the script, we need to modify its permissions. First using the list function from previouys, with the full arguments asked for, check the permissions on the script.
 
