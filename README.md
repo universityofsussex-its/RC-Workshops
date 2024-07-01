@@ -34,13 +34,15 @@
     <a href="https://github.com/universityofsussex-its/RC-Workshops/issues">Report Bug</a>
     ·
     <a href="https://github.com/universityofsussex-its/RC-Workshops/issues">Request Feature</a>
+
+    [![Contributors][contributors-shield]][contributors-url]
+    [![Forks][forks-shield]][forks-url]
+    [![Issues][issues-shield]][issues-url]
+
   </p>
 </div>
 
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Issues][issues-shield]][issues-url]
 
 
 
