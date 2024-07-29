@@ -141,7 +141,7 @@ These three Exercises are designed to get the basics of Navigating the new Artem
 
 These are presented currently as a DEMO for the RSE Workshop and not intended to be the final design. The slides will be uploaded once checked for sensitive data.
 
-- <a href="exercises/basic/Exercise1/">Exercise 1</a>
+- <a href="exercises/artemis/Exercise1/">Exercise 1</a>
 - <a href="exercises/artemis/Exercise2/">Exercise 2</a>
 - <a href="exercises/artemis/Exercise3/">Exercise 3</a>
 
