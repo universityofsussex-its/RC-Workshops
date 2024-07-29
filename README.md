@@ -65,7 +65,7 @@
     <li><a href="#basic-exercises">Basic Exercises</a></li>
     <li><a href="#advanced-exercises">Advanced Exercises</a></li>
     <li><a href="#gpu-exercises">GPU Exercises</a></li>
-    <li><a href="#apollo2-to-artemis">Apollo2 to Artemis</a></li>
+    <li><a href="#artemis">Artemis</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
   </ol>
@@ -135,14 +135,26 @@ The Exercies are expected to take around 2h to complete, based on a 2-4h worksho
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Artemis
+
+These three Exercises are designed to get the basics of Navigating the new Artemis HRC Open OnDemand Web Portal with the Slurm Schedular.
+
+These are presented currently as a DEMO for the RSE Workshop and not intended to be the final design. The slides will be uploaded once checked for sensitive data.
+
+- <a href="exercises/basic/Exercise1/">Exercise 1</a>
+- <a href="exercises/artemis/Exercise2/">Exercise 2</a>
+- <a href="exercises/artemis/Exercise3/">Exercise 3</a>
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Basic Exercises
-- [ ] Basic Exercises Solutions
+- [x] Basic Exercises
+- [x] Basic Exercises Solutions
 - [ ] Advanced Exercises
 - [ ] Advanced Exercises Solutions
+- [ ] GPU Exercises
+- [ ] GPU Exercises Solutions
+- [x] Artemis Workshop
 
 See the [open issues](https://github.com/universityofsussex-its/RC-Workshops/issues) for a full list of proposed features (and known issues).
 
