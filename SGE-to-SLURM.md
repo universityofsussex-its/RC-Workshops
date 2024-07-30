@@ -175,14 +175,14 @@ srun ./myprog > prog.out
 ##If using both GPUs of a node
 #SBATCH --partition=gpu
 ##If using only 1 GPU of a shared node
-###SBATCH --partition=gpu:1
+###SBATCH --partition=gpu:A40:1
 ##Node feature:
 #SBATCH --constraint="gpu"
 ##Specify number of GPUs to use:
 # If using both GPUs of a node
-#SBATCH --gres=gpu:2
+#SBATCH --gres=gpu:A40:2
 ### If using only 1 GPU of a shared node
-###SBATCH --gres=gpu:1
+###SBATCH --gres=gpu:A40:1
 #
 ##Number of nodes and MPI tasks per node:
 #SBATCH --nodes=1
