@@ -148,7 +148,7 @@ In this section the exercises will take you through the job composer and the use
 
 ### Convert Templates
 
-This section you will create jobs from default templates and attempt to repair/convert them. Each exercise will have a number of errors and a description of what the template was meant to do. 
+This section you will create jobs from default templates and attempt to repair/convert them, or design them from scratch. Each exercise will have a number of errors and a description of what the template was meant to do. 
 
 Each Exercise should start by you creating a new job from the template, copying the default job script into a new script and correcting issues.
 
@@ -176,6 +176,11 @@ Each Exercise should start by you creating a new job from the template, copying 
             wget -e use_proxy=on -e https_proxy=$HTTPS_PROXY
 
         </details>
+
+1. Convert existing Apollo2 Script
+
+    - Template: `SLURM-Bugged`
+    - Description: This script is already in SLURM format - however there are a number of errors which will prevent it from running, which are mistakes likely to be made when intitally switching from SGE to SLURM. This script should load the default Python version and then attempt to install to you `workdir` the python module `numpy`.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

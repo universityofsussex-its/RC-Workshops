@@ -210,7 +210,7 @@ You should always rely on your own environment or a module loaded by the `module
 
 |  ⚠️ Warning ⚠️  |
 | :-----------: |
-| **IMPORTANT:** Do not do these steps today - these are for when you have your own user account. These steps were already performed for you. |
+| **IMPORTANT:** Do not do these steps to create a Kernel today - these are for when you have your own user account. These steps were already performed for you.<br/> Have a read through and then continue from Connecting your kernel. |
 
 
 4. Start a Compute Session
@@ -287,6 +287,31 @@ Or if you have started multiple notebook - you might need to clean up your envir
 
     Deleting the Session will not delete your files. And the job session will be deleted in 6 days automatically.
 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+### Extension Exercises
+
+These exercise are designed to push your current understanding of the Artemis HRC and the Open OnDemand Web Portal.
+
+If you want to you can just stop here and come back to these when the service is fully deployed.
+
+1. GPU
+
+    Run an interactive session and attach a single gpu. The SGE-to-SLURM page will aid with this - but you might need to make use of the slurm commands to search the config to do this. 
+
+    Task: `Python GPU`
+
+    Description: Starting a GPU session, build a new Anconcda Environment with Tensorflow GPU support. Run the Test suite for Tensorflow.
+
+
+    Task: `Mixbench`
+
+    Description: Clone "https://github.com/ekondis/mixbench" and compile, build and test the sessions GPU and CPU.
+
+
+(More to be added for full launch)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
